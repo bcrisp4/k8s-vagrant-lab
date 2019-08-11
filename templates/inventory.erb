@@ -1,0 +1,21 @@
+# Automatically generated when running Vagrant. Manual changes will be lost.
+
+<% if defined_masters -%>
+[masters]
+<% defined_masters.each do |master| -%>
+<%= master %>    ansible_ssh_private_key_file=/vagrant/.vagrant/machines/<%= master %>/libvirt/private_key
+<% end -%>
+
+[masters:vars]
+kubernetes_role = "master"
+<% end -%>
+
+<% if defined_nodes -%>
+[nodes]
+<% defined_nodes.each do |node| -%>
+<%= node %>      ansible_ssh_private_key_file=/vagrant/.vagrant/machines/<%= node %>/libvirt/private_key
+<% end -%>
+
+[nodes:vars]
+kubernetes_role = "node"
+<% end -%>

@@ -1,0 +1,26 @@
+- hosts: all
+  become: yes
+  gather_facts: yes
+
+  vars:
+    kubernetes_allow_pods_on_master: true
+
+  tasks:  
+  - name: "Update all packages"
+    dnf:
+      name: "*"
+      state: latest
+      update_cache: yes
+     
+  
+  - name: "Install packages"
+    dnf:
+      name:
+        - vim 
+        - nano
+        - htop
+      state: present
+     
+  roles:
+    - geerlingguy.docker
+    - geerlingguy.kubernetes

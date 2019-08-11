@@ -1,0 +1,2 @@
+# Kubernetes on Fedora Vagrant Lab
+Automatically deploy a local k8s cluster on Fedora VMs with Vagrant and Ansible

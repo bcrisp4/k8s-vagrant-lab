@@ -1,0 +1,5 @@
+- hosts: nodes
+  tasks:
+    - name: What am I?
+      debug:
+        msg: "I am a k8s node"
